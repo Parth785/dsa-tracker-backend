@@ -40,6 +40,8 @@ public class ProblemService {
         r.setDate(p.getDate());
         r.setCreatedAt(p.getCreatedAt());
         r.setUpdatedAt(p.getUpdatedAt());
+        r.setSolutionCode(p.getSolutionCode());
+
         return r;
     }
 
@@ -73,6 +75,7 @@ public class ProblemService {
                 .mistakeNote(request.getMistakeNote())
                 .revisionStatus(request.getRevisionStatus() != null ? request.getRevisionStatus() : "no")
                 .date(request.getDate() != null ? request.getDate() : LocalDate.now())
+                .solutionCode(request.getSolutionCode())
                 .build();
         return toResponse(problemRepository.save(p));
     }
@@ -93,6 +96,7 @@ public class ProblemService {
         if (request.getMistakeNote() != null)     p.setMistakeNote(request.getMistakeNote());
         if (request.getRevisionStatus() != null)  p.setRevisionStatus(request.getRevisionStatus());
         if (request.getDate() != null)            p.setDate(request.getDate());
+        if (request.getSolutionCode() != null)    p.setSolutionCode(request.getSolutionCode());
 
         return toResponse(problemRepository.save(p));
     }

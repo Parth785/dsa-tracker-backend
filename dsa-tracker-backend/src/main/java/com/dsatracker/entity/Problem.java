@@ -23,6 +23,9 @@ public class Problem {
 
     @Column(nullable = false)
     private String name;
+    
+    @Column(name = "solution_code", columnDefinition = "TEXT")
+    private String solutionCode;
 
     @Column(name = "lc_number")
     private String lcNumber;
