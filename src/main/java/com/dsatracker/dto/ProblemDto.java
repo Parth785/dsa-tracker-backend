@@ -25,6 +25,7 @@ public class ProblemDto {
         private String mistakeNote;
         private String revisionStatus;   // no | yes | hard
         private LocalDate date;
+        private String solutionCode;
     }
 
     @Data
@@ -39,6 +40,7 @@ public class ProblemDto {
         private String mistakeNote;
         private String revisionStatus;
         private LocalDate date;
+        private String solutionCode;
     }
 
     @Data
@@ -56,6 +58,7 @@ public class ProblemDto {
         private LocalDate date;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
+        private String solutionCode;
     }
 
     @Data

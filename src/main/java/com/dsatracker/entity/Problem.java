@@ -26,6 +26,9 @@ public class Problem {
 
     @Column(name = "lc_number")
     private String lcNumber;
+    
+    @Column(name = "solution_code", columnDefinition = "TEXT")
+    private String solutionCode;
 
     private String pattern;
 
