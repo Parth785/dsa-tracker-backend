@@ -59,7 +59,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(List.of(
-            "https://dsa-tracker-frontend-ivory.vercel.app"
+            "https://dsa-tracker-frontend-production.up.railway.app"
         ));
 
         configuration.setAllowedMethods(List.of(
