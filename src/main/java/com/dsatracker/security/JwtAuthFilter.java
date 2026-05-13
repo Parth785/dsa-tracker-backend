@@ -31,10 +31,15 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         try {
-        	if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-        	    filterChain.doFilter(request, response);
-        	    return;
-        	}
+        	String path = request.getServletPath();
+
+        	if (
+        		    "OPTIONS".equalsIgnoreCase(request.getMethod()) ||
+        		    path.startsWith("/api/auth/")
+        		) {
+        		    filterChain.doFilter(request, response);
+        		    return;
+        		}
             String jwt = parseJwt(request);
             if (jwt != null && jwtUtils.validateToken(jwt)) {
                 String email = jwtUtils.getEmailFromToken(jwt);
